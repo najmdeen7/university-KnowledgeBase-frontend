@@ -1,4 +1,5 @@
 import SubHeader from "../Combonents/SubHeader";
+import ContactCard from "../Combonents/ContactCard";
 const sampleArticle = {
   title: "التسجيل في الجامعة",
   category: "القبول والتسجيل",
@@ -22,6 +23,7 @@ export default function ArticlePage() {
         style={{ backgroundColor: "#FFFFFF" }}
         className="container mx-auto p-8 grid lg:grid-cols-3 gap-12"
       >
+        <ContactCard></ContactCard>
         <article className="lg:col-span-2">
           <h1
             className="text-4xl font-extrabold mb-6"
@@ -50,32 +52,7 @@ export default function ArticlePage() {
             </div>
           </div>
         </article>
-        <aside className="lg:col-span-1 h-full flex items-center justify-center gap-2.5">
-          <div
-            style={{ backgroundColor: "#0A2D57" }}
-            className=" flex p-6 rounded-lg text-white h-2/3 w-2/3 flex-col items-center justify-center"
-          >
-            <h3 className="font-bold text-xl mb-4">مواضيع ذات صلة:</h3>
-            <hr className=" text-white w-full p-5"></hr>
-            <ul className="space-y-3">
-              <li>
-                <a href="#" className="hover:underline">
-                  التخصصات الموجودة
-                </a>
-              </li>
-              <li>
-                <a href="#" className="hover:underline">
-                  تسجيل الطلبة الأجانب
-                </a>
-              </li>
-              <li>
-                <a href="#" className="hover:underline">
-                  تنزيل المواد
-                </a>
-              </li>
-            </ul>
-          </div>
-        </aside>
+        
       </main>
     </div>
   );

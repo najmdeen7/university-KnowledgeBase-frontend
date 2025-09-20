@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 export default function CategoryCard({ title, questions }) {
   return (
     <div
@@ -5,12 +7,13 @@ export default function CategoryCard({ title, questions }) {
       className="p-6 rounded-lg shadow-lg flex flex-col h-full relative transition-all duration-300 hover:shadow-xl hover:-translate-y-1.5"
     >
       <h3 className="font-bold text-xl mb-4 text-right">
-        <a
-          href="#"
-          className="text-gray-900 hover:text-[theme(colors.primary-blue)] after:absolute after:inset-0"
+        {/* The link now points to the Digital Services page */}
+        <Link
+          to="/services"
+          className="text-gray-900 hover:text-blue-600 after:absolute after:inset-0"
         >
           {title}
-        </a>
+        </Link>
       </h3>
 
       <hr style={{ borderColor: "rgba(0, 0, 0, 0.1)" }} className="mb-4" />
@@ -20,7 +23,7 @@ export default function CategoryCard({ title, questions }) {
           <li key={index}>
             <a
               href="#"
-              className="text-gray-600 hover:text-[theme(colors.primary-blue)] transition-colors"
+              className="text-gray-600 hover:text-blue-600 transition-colors"
             >
               {question}
             </a>
