@@ -2,7 +2,7 @@ export default function Footer() {
   return (
     <div
       style={{ backgroundColor: "#0A2D57" }}
-      className="text-white p-8 w-full text-right"
+      className="text-white p-8 w-full text-right mt-5"
     >
       <div className="container mx-auto flex flex-col md:flex-row justify-between gap-8">
         <div>

@@ -1,12 +1,12 @@
 // src/App.jsx
-import React from 'react';
-import { Routes, Route } from 'react-router-dom';
-import Header from './Combonents/Header';
-import Footer from './Combonents/footer';
-import HomePage from './pages/HomePage';
-import ArticlePage from './pages/ArticlePage';
-import DigitalServices from './pages/DigitalServices'; // 1. استيراد الصفحة المفقودة
-import './App.css';
+import React from "react";
+import { Routes, Route } from "react-router-dom";
+import Header from "./Combonents/Header";
+import Footer from "./Combonents/footer";
+import HomePage from "./pages/HomePage";
+import ArticlePage from "./pages/ArticlePage";
+import DigitalServices from "./pages/DigitalServices";
+import "./App.css";
 
 function App() {
   return (
@@ -16,8 +16,6 @@ function App() {
       <main className="flex-grow">
         <Routes>
           <Route path="/" element={<HomePage />} />
-
-          {/* 2. إضافة المسار لصفحة الخدمات الرقمية */}
           <Route path="/services" element={<DigitalServices />} />
 
           <Route path="/article" element={<ArticlePage />} />
