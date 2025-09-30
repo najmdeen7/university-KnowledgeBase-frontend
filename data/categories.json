@@ -1,0 +1,22 @@
+[
+  {
+    "id": 1,
+    "slug": "financial-affairs",
+    "name": "الشؤون المالية"
+  },
+  {
+    "id": 2,
+    "slug": "student-affairs",
+    "name": "شؤون الطلبة"
+  },
+  {
+    "id": 3,
+    "slug": "digital-services",
+    "name": "الخدمات الرقمية"
+  },
+  {
+    "id": 4,
+    "slug": "admissions-and-registration",
+    "name": "القبول و التسجيل"
+  }
+]

@@ -1,0 +1,74 @@
+[
+  {
+    "id": 101,
+    "categoryId": "financial-affairs",
+    "title": "استخراج إفادة مرتب",
+    "content": "هنا محتوى المقال الخاص بكيفية استخراج إفادة مرتب..."
+  },
+  {
+    "id": 102,
+    "categoryId": "financial-affairs",
+    "title": "المنح الدراسية",
+    "content": "هنا محتوى المقال الخاص بالمنح الدراسية..."
+  },
+  {
+    "id": 103,
+    "categoryId": "financial-affairs",
+    "title": "رسوم تجديد القيد",
+    "content": "هنا محتوى المقال الخاص برسوم تجديد القيد..."
+  },
+  {
+    "id": 201,
+    "categoryId": "student-affairs",
+    "title": "إعداد الطلبة",
+    "content": "هنا محتوى المقال الخاص بإعداد الطلبة..."
+  },
+  {
+    "id": 202,
+    "categoryId": "student-affairs",
+    "title": "استخراج بطاقة طالب",
+    "content": "هنا محتوى المقال الخاص باستخراج بطاقة طالب..."
+  },
+  {
+    "id": 203,
+    "categoryId": "student-affairs",
+    "title": "السكن الجامعي",
+    "content": "هنا محتوى المقال الخاص بالسكن الجامعي..."
+  },
+  {
+    "id": 301,
+    "categoryId": "digital-services",
+    "title": "الحصول على بريد جامعي",
+    "content": "هنا محتوى المقال الخاص بالحصول على بريد جامعي..."
+  },
+  {
+    "id": 302,
+    "categoryId": "digital-services",
+    "title": "تنزيل السفرات",
+    "content": "هنا محتوى المقال الخاص بتنزيل السفرات..."
+  },
+  {
+    "id": 303,
+    "categoryId": "digital-services",
+    "title": "البوابة الرقمية",
+    "content": "هنا محتوى المقال الخاص بالبوابة الرقمية..."
+  },
+  {
+    "id": 401,
+    "categoryId": "admissions-and-registration",
+    "title": "عملية التسجيل في الجامعة",
+    "content": "هنا محتوى المقال الخاص بعملية التسجيل في الجامعة..."
+  },
+  {
+    "id": 402,
+    "categoryId": "admissions-and-registration",
+    "title": "الأقسام العلمية",
+    "content": "هنا محتوى المقال الخاص بالأقسام العلمية..."
+  },
+  {
+    "id": 403,
+    "categoryId": "admissions-and-registration",
+    "title": "إجراءات الانتقال بين الكليات",
+    "content": "هنا محتوى المقال الخاص بإجراءات الانتقال بين الكليات..."
+  }
+]
