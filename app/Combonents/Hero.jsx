@@ -1,51 +1,95 @@
-import Image from "next/image"; // 1. Import the Next.js Image component
+'use client';
+
+import Image from "next/image";
+import { useState, useEffect } from 'react';
+import { useRouter } from 'next/navigation';
+import Link from 'next/link';
 
 export default function Hero() {
-  return (
-      // 2. The main container is now a positioning reference for the image
-      <div className="relative h-[450px]">
+    const [query, setQuery] = useState('');
+    const [suggestions, setSuggestions] = useState([]);
+    const [isLoading, setIsLoading] = useState(false);
+    const router = useRouter();
 
-        {/* 3. Use the Image component as the background layer */}
-        <Image
-            src="/campus-bg.jpg" // Assumes campus-bg.jpg is in the "public" folder
-            alt="Background of the university campus"
-            fill // This makes the image fill the parent div
-            className="object-cover" // This is like "background-size: cover"
-        />
+    // This useEffect hook runs whenever the 'query' changes (i.e., when you type)
+    useEffect(() => {
+        // 1. Don't search if the query is too short
+        if (query.length < 2) {
+            setSuggestions([]);
+            return;
+        }
 
-        {/* The overlay */}
-        <div className="absolute inset-0 bg-blue-950/70"></div>
+        setIsLoading(true);
 
-        {/* The content, which is automatically on top */}
-        <div className="relative h-full flex flex-col items-center justify-center text-center text-white p-4">
-          <h1 className="text-4xl md:text-5xl font-extrabold mb-6 text-white drop-shadow-lg">
-            مركز المساعدة جامعة طرابلس
-          </h1>
+        // 2. This is the debounce timer
+        const debounceTimer = setTimeout(() => {
+            fetch(`/api/search?q=${query}`)
+                .then(res => res.json())
+                .then(data => {
+                    setSuggestions(data);
+                    setIsLoading(false);
+                });
+        }, 300); // 300ms delay
 
-          <div className="w-full max-w-2xl relative">
-            <input
-                type="search"
-                placeholder="البحث..."
-                className="w-full p-4 pr-14 rounded-full text-lg text-gray-800 focus:outline-none focus:ring-4 focus:ring-blue-300 transition bg-white"
+        // 3. Cleanup: cancel the timer if the user types again
+        return () => clearTimeout(debounceTimer);
+
+    }, [query]);
+
+    // This handles the case where the user presses Enter
+    const handleSearchSubmit = (e) => {
+        e.preventDefault();
+        if (!query.trim()) return;
+        router.push(`/search?q=${query}`);
+    };
+
+    return (
+        <div className="relative h-[450px]">
+            <Image
+                src="/campus-bg.jpg"
+                alt="Background of the university campus"
+                fill
+                className="object-cover"
             />
-            <div className="absolute right-5 top-1/2 -translate-y-1/2 pointer-events-none">
-              <svg
-                  className="h-6 w-6 text-gray-400"
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-              >
-                <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
-                />
-              </svg>
+            <div className="absolute inset-0 bg-blue-950/70"></div>
+            <div className="relative h-full flex flex-col items-center justify-center text-center text-white p-4">
+                <h1 className="text-4xl md:text-5xl font-extrabold mb-6 text-white drop-shadow-lg">
+                    مركز المساعدة جامعة طرابلس
+                </h1>
+                <div className="w-full max-w-2xl relative">
+                    <form onSubmit={handleSearchSubmit}>
+                        <input
+                            type="search"
+                            placeholder="البحث..."
+                            value={query}
+                            onChange={(e) => setQuery(e.target.value)}
+                            className="w-full p-4 pr-14 rounded-full text-lg text-gray-800 focus:outline-none focus:ring-4 focus:ring-blue-300 transition bg-white"
+                        />
+                        {/* Search Icon SVG */}
+                    </form>
+
+                    {/* 4. This is the new suggestions dropdown */}
+                    {(isLoading || suggestions.length > 0) && (
+                        <div className="absolute top-full mt-2 w-full bg-white rounded-lg shadow-lg text-right overflow-hidden z-30" dir="rtl">
+                            {isLoading && <div className="p-4 text-gray-500">جاري البحث...</div>}
+                            {!isLoading && (
+                                <ul>
+                                    {suggestions.slice(0, 5).map((article) => ( // Show top 5 results
+                                        <li key={article.id}>
+                                            <Link
+                                                href={`/article/${article.id}`}
+                                                className="block p-4 text-gray-800 hover:bg-gray-100 transition-colors"
+                                            >
+                                                {article.title}
+                                            </Link>
+                                        </li>
+                                    ))}
+                                </ul>
+                            )}
+                        </div>
+                    )}
+                </div>
             </div>
-          </div>
         </div>
-      </div>
-  );
+    );
 }

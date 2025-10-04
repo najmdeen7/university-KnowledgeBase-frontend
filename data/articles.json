@@ -18,6 +18,18 @@
     "content": "هنا محتوى المقال الخاص برسوم تجديد القيد..."
   },
   {
+    "id": 104,
+    "categoryId": "financial-affairs",
+    "title": "رسوم وطلبة الأجانب",
+    "content": "هنا محتوى المقال الخاص برسوم الطلبة الأجانب..."
+  },
+  {
+    "id": 105,
+    "categoryId": "financial-affairs",
+    "title": "عمليات الإيجار",
+    "content": "هنا محتوى المقال الخاص بعمليات الإيجار..."
+  },
+  {
     "id": 201,
     "categoryId": "student-affairs",
     "title": "إعداد الطلبة",
@@ -34,6 +46,12 @@
     "categoryId": "student-affairs",
     "title": "السكن الجامعي",
     "content": "هنا محتوى المقال الخاص بالسكن الجامعي..."
+  },
+  {
+    "id": 204,
+    "categoryId": "student-affairs",
+    "title": "استخراج استمارة التخرج",
+    "content": "هنا محتوى المقال الخاص باستخراج استمارة التخرج..."
   },
   {
     "id": 301,
@@ -54,6 +72,12 @@
     "content": "هنا محتوى المقال الخاص بالبوابة الرقمية..."
   },
   {
+    "id": 304,
+    "categoryId": "digital-services",
+    "title": "منظومة البحث العلمي",
+    "content": "هنا محتوى المقال الخاص بمنظومة البحث العلمي..."
+  },
+  {
     "id": 401,
     "categoryId": "admissions-and-registration",
     "title": "عملية التسجيل في الجامعة",
@@ -70,5 +94,11 @@
     "categoryId": "admissions-and-registration",
     "title": "إجراءات الانتقال بين الكليات",
     "content": "هنا محتوى المقال الخاص بإجراءات الانتقال بين الكليات..."
+  },
+  {
+    "id": 404,
+    "categoryId": "admissions-and-registration",
+    "title": "لوائح الطلبة",
+    "content": "هنا محتوى المقال الخاص بلوائح الطلبة..."
   }
 ]

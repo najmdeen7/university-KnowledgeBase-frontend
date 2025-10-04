@@ -5,14 +5,16 @@ import allArticles from "../data/articles.json";
 
 function getHomepageData() {
     return allCategories.map(category => {
-        const questionTitles = allArticles
+
+        const articlesForCategory = allArticles
             .filter(article => article.categoryId === category.slug)
-            .map(article => article.title);
+            .map(article => ({ id: article.id, title: article.title })); // <-- Change is here
+
         return {
             id: category.id,
             slug: category.slug,
             name: category.name,
-            questions: questionTitles,
+            questions: articlesForCategory,
         };
     });
 }
@@ -21,7 +23,7 @@ export default function HomePage() {
     const categories = getHomepageData();
 
     return (
-        // We use a Fragment <>...</> instead of a <main> tag
+
         <>
             <Hero />
             <CategoriesSection categories={categories} />
