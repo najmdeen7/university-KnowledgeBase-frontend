@@ -7,7 +7,7 @@ export default function CategoryCard({ title, questions, slug }) {
       <h3 className="font-bold text-xl mb-4 text-right">
         <Link
           href={`/category/${slug}`}
-          className="text-gray-900 hover:text-blue-600 after:absolute after:inset-0"
+          className="text-[#0A2D57] hover:text-blue-600 after:absolute after:inset-0"
         >
           {title}
         </Link>
